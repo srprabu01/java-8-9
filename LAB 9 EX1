@@ -1,0 +1,26 @@
+class RoleNotApplicableException extends Exception {
+   String s1;
+   RoleNotApplicableException(String s2) {
+      s1 = s2;
+   } 
+   @Override
+   public String toString() { 
+      return ("user defined exception is:"+s1);
+   }
+}
+public class Manager { 
+   public static void main(String args[]) {
+       int age=18,experience=3;
+       String name="Ramakrishnan",qualification="BE"; 
+      try {
+           if(qualification=="M.B.A"&&experience>10){
+                  System.out.println("role applicable");
+             }
+           else{
+         	throw new RoleNotApplicableException("your role is not applicable");
+     	 } catch(RoleNotApplicableException exp) {
+         	System.out.println(exp);
+      	}
+           }
+   }
+}
